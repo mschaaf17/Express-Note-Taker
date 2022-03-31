@@ -1,12 +1,24 @@
 {
-"notes": [
-        {
-        "title":"Test Title",
-        "text":"Test text"
-         },
-         {
-        "title": "Testing",
-        "text": "test text again"
-         }
-    ]
+  "notes": [
+    {
+      "id": "1",
+      "title": "Test Title",
+      "text": "Test text"
+    },
+    {
+      "id": "2",
+      "title": "Testing",
+      "text": "test text again"
+    },
+    {
+      "title": "ANotherONE",
+      "text": "Hopefully this works with a new id!",
+      "id": "2"
+    },
+    {
+      "title": "ANotherONE",
+      "text": "Hopefully this works with a new id!",
+      "id": "3"
+    }
+  ]
 }
