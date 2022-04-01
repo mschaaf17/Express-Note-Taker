@@ -2,7 +2,7 @@
 //post/api/notes
 //you wil need api routes with notes.js and index.js
 //you will need a html routes-- this is all the router.get paths
-
+//if the style doesn't show-- app.use(express.static('public'))
 //route to the data to save the notes
 const { notes } = require('./db/db.json')
 const express = require('express')
@@ -17,7 +17,7 @@ const app = express()
 app.use(express.urlencoded({ extended: true}))
 //parse incoming JSON data-- this is middle wear the use
 app.use(express.json())
-
+app.use(express.static('public'))
 //add the route to show all the saved notes-- this is more likely what you need
 // app.get('/api/notes', (req, res) => {
 //     res.json(notes)
@@ -80,6 +80,7 @@ app.get('/api/notes', (req, res) => {
     res.json(results)
 })
 
+
 //this will create the get route for notes by id
 app.get('/api/notes/:id', (req, res) => {
     const result = findById(req.params.id, notes)
@@ -109,6 +110,24 @@ app.post('/api/notes', (req, res) => {
     res.json(note)
 }
 })
+//set up delete
+// app.delete('/api/notes:id', (req, res) => {
+//     let noteId = parseInt(res.params.id)
+//     console.log(noteId)
+
+//     for (i = 0; i < note) 
+// }) 
+
+
+
+//this is to display the index when the server is running on local host
+app.get('/', (req, res)=> {
+    res.sendFile(path.join(__dirname, './public/index.html'))
+})
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/notes.html'))
+})
+
 
 //using app variable chain listen to make the server listen
 app.listen(3001, () => {
