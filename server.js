@@ -26,18 +26,10 @@ function createNewNote(body, notesArray) {
     return note
 }
 
-// function deleteNote(body, notesArray) {
-//     const note = body;
-
-// }
-
 
 //get the updated notes.json file
 app.get('/api/notes', (req, res) => {
     let results = notes;
-    // if(req.query) {
-    //     results = filterByQuery(req.query, results)
-    // }
     res.json(results)
 })
 
@@ -85,5 +77,3 @@ app.listen(PORT, () => {
     console.log(`API server is now on port 3001!`)
 })
 
-
-//save to heroku-- git add . git commit and then git push heroku main
