@@ -20,7 +20,7 @@ https://note-taker-ms.herokuapp.com/
 
 
 ## Usage:
-To build write reminders on a webpage.
+To write reminders on a webpage.
 
 ## Installation:
 Clone the code and then run npm install
